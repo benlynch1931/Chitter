@@ -6,6 +6,11 @@ describe Database do
   # testing = 'RETURNING peep_date, peep_time, user_id, body'
   insert_peep = ["#{date}","#{time}", 'ADMIN', 'Test Peep']
   specify_peep = ['2020-10-24','10:45:20', 'ADMIN', 'First Peep!']
+  all_peep = [
+    ['2020-10-24','10:45:20', 'ADMIN', 'First Peep!'],
+    ['2020-10-24','11:13:39', 'ADMIN', 'Second Peep!'],
+    ['2020-10-24','12:30:02', 'ADMIN', 'Third Peep!']
+  ]
 
   before(:each) do
     truncate_table
@@ -31,6 +36,13 @@ describe Database do
 
     it "accesses specific peeps from database" do
       expect(Database.access_specify(condition: "WHERE peeps.body='First Peep!'").first).to eq specify_peep
+    end
+  end
+
+  context ' #access_all' do
+
+    it "accesses all peeps from database" do
+      expect(Database.access_all).to eq all_peep.reverse
     end
   end
 end

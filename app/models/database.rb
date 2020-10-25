@@ -25,6 +25,15 @@ class Database
     result.map { |each| [each['peep_date'],each['peep_time'], each['username'], each['body']]}
   end
 
+  def self.access_all
+    initialize_database
+    result = @@db.exec(
+      "SELECT * FROM peeps INNER JOIN users ON peeps.user_id = users.user_id ORDER BY peep_date DESC, peep_time DESC;"
+    )
+    result.map { |each| [each['peep_date'],each['peep_time'], each['username'], each['body']]}
+
+  end
+
   private
 
   def self.initialize_database
