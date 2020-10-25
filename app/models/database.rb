@@ -22,7 +22,8 @@ class Database
     result = @@db.exec(
       "SELECT * FROM peeps INNER JOIN users ON peeps.user_id = users.user_id #{condition} ORDER BY peep_date DESC, peep_time DESC;"
     )
-    result.map { |each| [each['peep_date'],each['peep_time'], each['username'], each['body']]}
+    # result.map { |each| [each['peep_date'],each['peep_time'], each['username'], each['body']]}
+    map_result(result: result)
   end
 
   def self.access_all
@@ -30,8 +31,8 @@ class Database
     result = @@db.exec(
       "SELECT * FROM peeps INNER JOIN users ON peeps.user_id = users.user_id ORDER BY peep_date DESC, peep_time DESC;"
     )
-    result.map { |each| [each['peep_date'],each['peep_time'], each['username'], each['body']]}
-
+    # result.map { |each| [each['peep_date'],each['peep_time'], each['username'], each['body']]}
+    map_result(result: result)
   end
 
   private
@@ -51,5 +52,9 @@ class Database
     ensure
       puts message
     end
+  end
+
+  def self.map_result(result:)
+    result.map { |each| ExistingPeeps.new(each['peep_id'], each['peep_date'], each['peep_time'], each['user_id'], each['username'], each['body'])}
   end
 end
