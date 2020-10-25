@@ -1,6 +1,7 @@
 # frozen_string_leteral: false
 
 require 'pg'
+require './app/models/existing_peeps.rb'
 
 # This class controls data flow into and out of the chitter database
 class Database
@@ -9,7 +10,7 @@ class Database
     initialize_database
   end
 
-  def self.insert_peep_into_db(id_user:, body:)
+  def self.insert_peep_into_db(id_user: 1, body:)
     initialize_database
     insert = @@db.exec(
       "INSERT INTO peeps(peep_date, peep_time, user_id, body)

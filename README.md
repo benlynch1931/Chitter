@@ -24,7 +24,7 @@
 ```
 - Next, in Terminal run:
 ```shell
-% psql chitter_manager -f 01_create_development_environment.sql
+% psql chitter_manager -f ./db/migrations/01_create_development_environment.sql
 ```
 
 ### Test Environment Database:
@@ -36,5 +36,5 @@
 ```
 - Next, in Terminal run:
 ```shell
-% psql chitter_manager_test -f 02_create_test_environment.sql
+% psql chitter_manager_test -f ./db/migrations/02_create_test_environment.sql
 ```

@@ -19,7 +19,7 @@ require File.join(File.dirname(__FILE__), '../app/controllers/', 'app.rb')
 # ENV['RACK_ENV'] = 'test'
 
 # tell Capybara about our app class
-Capybara.app = BookmarkApp
+Capybara.app = ChitterApp
 
 RSpec.configure do |config|
   config.after(:suite) do

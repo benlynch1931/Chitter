@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <ul>
+      <% @peeps.each do |peep| %>
+        <li>
+          <h2><%= peep.username %></h2>
+          <ul style="padding-left: 30px;">
+            <li><%= peep.body%></li>
+            <li><%= peep.date %> - <%= peep.time %></li>
+          </ul>
+        </li>
+      <% end %>
+    </ul>
+
+  </body>
+
+
+</html>

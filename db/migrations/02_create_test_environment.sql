@@ -1,6 +1,6 @@
-CREATE TABLE users(user_id SERIAL PRIMARY KEY,  username VARCHAR(20));
+CREATE TABLE users(user_id SERIAL PRIMARY KEY,  name VARCHAR(20), username VARCHAR(20), user_email VARCHAR(60), user_password VARCHAR(140));
 
-INSERT INTO users(username) VALUES('ADMIN');
+INSERT INTO users(name, username, user_email, user_password) VALUES('ADMIN', 'ADMIN', 'admin@ex.com', 'password123');
 
 CREATE TABLE peeps(
   peep_id SERIAL PRIMARY KEY,
