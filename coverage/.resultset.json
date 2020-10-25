@@ -18,7 +18,7 @@
           null,
           null,
           1,
-          1,
+          3,
           null,
           null,
           null,
@@ -91,6 +91,22 @@
           null
         ]
       },
+      "/Users/ben/Desktop/IT Portfolio/MAKERS/COURSE/Week04/Chitter/spec/features/add_peep_features_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/Users/ben/Desktop/IT Portfolio/MAKERS/COURSE/Week04/Chitter/spec/features/index_features_spec.rb": {
         "lines": [
           1,
@@ -155,9 +171,9 @@
           1,
           1,
           1,
-          0,
-          0,
-          0,
+          1,
+          1,
+          1,
           null,
           null,
           null,
@@ -218,6 +234,6 @@
         ]
       }
     },
-    "timestamp": 1603633041
+    "timestamp": 1603633406
   }
 }
