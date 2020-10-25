@@ -16,7 +16,7 @@ SimpleCov.start
 require File.join(File.dirname(__FILE__), '../app/controllers/', 'app.rb')
 
 # For accurate test coverage measurements, require your code AFTER 'SimpleCov.start'
-ENV['RACK_ENV'] = 'test'
+# ENV['RACK_ENV'] = 'test'
 
 # tell Capybara about our app class
 Capybara.app = BookmarkApp
