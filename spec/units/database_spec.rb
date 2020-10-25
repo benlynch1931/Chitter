@@ -29,7 +29,6 @@ describe Database do
     it "inserts a 'peep' into the correct database" do
       Database.insert_peep_into_db(id_user: 1, body: 'Test Peep')
       result = Database.access_specify(condition: "WHERE peeps.body='Test Peep'").first
-      puts result.id
       expect(result.id).to eq insert_peep[0]
       expect(result.date).to eq insert_peep[1]
       expect(result.time).to eq insert_peep[2]
